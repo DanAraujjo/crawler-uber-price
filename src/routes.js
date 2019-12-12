@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
+import TripController from './app/controllers/TripController';
+
 const routes = new Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ status: 'online' });
-});
+routes.post('/trips', TripController.store);
 
 export default routes;
