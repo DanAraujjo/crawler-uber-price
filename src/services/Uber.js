@@ -14,14 +14,14 @@ export default async ({ source, destiny }) => {
 
   const options = {
     args,
-    headless: false,
+    headless: true,
     ignoreHTTPSErrors: true,
     userDataDir: './tmp',
   };
 
   const browser = await puppeteer.launch(options);
   const page = await browser.newPage();
-  await page.setViewport({ width: 1920, height: 1080 });
+  await page.setViewport({ width: 1280, height: 800 });
 
   await page.goto('https://www.uber.com/br/pt-br/price-estimate/');
   await page.waitFor(1500);
