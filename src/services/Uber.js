@@ -43,12 +43,14 @@ export default async ({ source, destiny }) => {
   await page.waitFor(2000);
 
   // printscreen
-  // await page.screenshot({ path: `./tmp/${id}.png` });
+  // await page.screenshot({ path: `./tmp/uber.png` });
 
   const content = await page.content();
   const $ = cheerio.load(content);
 
-  const value = $('#main>div>div>div>div>div>div>div>div>div>div>span').html();
+  const value = $(
+    '#main>section:nth-child(3)>div>div>div>div>div>div>div>div>div>div>div>span'
+  ).html();
 
   await browser.close();
 

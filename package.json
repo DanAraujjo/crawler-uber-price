@@ -5,10 +5,10 @@
   "author": "Daniel Araujo <dan.araujjo@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "puppeteer": "^2.0.0",
+    "puppeteer": "^5.5.0",
     "yup": "^0.27.0"
   },
   "scripts": {

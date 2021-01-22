@@ -17,18 +17,22 @@ class TripController {
         .json({ error: 'Validação falhou! Favor informar origem e destino.' });
     }
 
-    const value = await Uber(req.body);
+    try {
+      const value = await Uber(req.body);
 
-    if (!value) {
-      return res.status(400).json({
-        error:
-          'Não foi possivel verificar o valor, verifique os dados informados!',
-      });
+      if (!value) {
+        return res.status(400).json({
+          error:
+            'Não foi possivel verificar o valor, verifique os dados informados!',
+        });
+      }
+
+      const trip = { ...req.body, value };
+
+      return res.json(trip);
+    } catch (error) {
+      return res.status(500).json({ error });
     }
-
-    const trip = { ...req.body, value };
-
-    return res.json(trip);
   }
 }
 
